@@ -36,6 +36,14 @@ class User extends Authenticatable
     }
 
     /**
+     * Compound Names created by User.
+     */
+    public function compoundNames()
+    {
+        return $this->hasMany(CompoundName::class);
+    }
+
+    /**
      * Is the user an administrator.
      */
     public function isAdmin()

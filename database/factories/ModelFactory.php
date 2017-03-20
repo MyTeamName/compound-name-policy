@@ -31,3 +31,12 @@ $factory->define(App\Post::class, function (Faker\Generator $faker) {
         },
     ];
 });
+
+$factory->define(App\CompoundName::class, function (Faker\Generator $faker) {
+    return [
+        'sentence' => $faker->sentence,
+        'user_id' => function(){
+            return factory(App\User::class)->create()->id;
+        },
+    ];
+});

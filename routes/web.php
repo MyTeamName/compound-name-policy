@@ -21,6 +21,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('posts', 'PostController');
 
+Route::resource('compoundNames', 'CompoundNameController');
+
 Route::get('/impersonate/{user}', function(App\User $user){
     Auth::login($user);
 });
